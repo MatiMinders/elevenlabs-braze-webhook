@@ -63,6 +63,8 @@ def webhook():
         return {"status": "ok", "braze": response.status_code, "attribute_sent": attribute}, 200
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         return {"status": "error", "message": str(e)}, 500
 
 if __name__ == "__main__":
